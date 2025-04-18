@@ -1,10 +1,6 @@
 #include "ServerPlugin.hpp"
 
-#ifdef __SWITCH__
-#include "../Platform.hpp" // A bit lazy to set this up correctly
-#else
 #include "Utils/Platform.hpp"
-#endif
 #include <cstring>
 
 InterfaceReg *InterfaceReg::s_pInterfaceRegs = nullptr;

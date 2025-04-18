@@ -16,7 +16,9 @@
 #include "SDK/GameEvents.hpp"
 #include "SDK/GameMovement.hpp"
 #include "SDK/GlobalVars.hpp"
+#endif
 #include "SDK/Handle.hpp"
+#ifndef __SWITCH__
 #include "SDK/HostState.hpp"
 #include "SDK/ICollideable.hpp"
 #include "SDK/ILoggingListener.hpp"
@@ -27,7 +29,9 @@
 #include "SDK/Math.hpp"
 #ifndef __SWITCH__
 #include "SDK/MeshBuilder.hpp"
+#endif
 #include "SDK/PlayerLocalData.hpp"
+#ifndef __SWITCH__
 #include "SDK/PortalPlacement.hpp"
 #endif
 #include "SDK/ServerPlugin.hpp"

@@ -1,8 +1,11 @@
 #include "SAR.hpp"
 
-#include "NXModule.hpp"
 #include "Utils/Platform.hpp"
 #include "Utils/SDK/ServerPlugin.hpp"
+
+#ifdef __SWITCH__
+#include "NXModule.hpp"
+#endif
 
 #include <cstring>
 
@@ -14,12 +17,14 @@ SAR sar;
 EXPOSE_SINGLE_INTERFACE_GLOBALVAR(SAR, IServerPluginCallbacks, INTERFACEVERSION_ISERVERPLUGINCALLBACKS, sar);
 
 bool SAR::Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory) {
+#ifdef __SWITCH__
 	// base of all modules shipped
 	if (!InitNXModuleBases()) {
 		return false;
 	}
 
 	g_pCVar = interfaceFactory("VEngineCvar007", nullptr);
+#endif
 
 	return true;
 }

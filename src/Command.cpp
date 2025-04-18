@@ -43,6 +43,9 @@ Command::Command(const char *pName, _CommandCallback callback, const char *pHelp
 ConCommand *Command::ThisPtr() {
 	return this->ptr;
 }
+void Command::UniqueFor(int version) {
+	this->version = version;
+}
 void Command::Register() {
 	if (!original_ConCommandvtable) {
 		original_ConCommandvtable = *(uintptr_t ***)this->ptr; // Record it once

@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __SWITCH__
 #include "Game.hpp"
+#ifndef __SWITCH__
 #include "Modules/Tier1.hpp"
 #else
 #include "Utils/SDK/Convar.hpp"

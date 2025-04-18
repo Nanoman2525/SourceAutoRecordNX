@@ -1,0 +1,21 @@
+{
+    "configurations":
+    [
+        {
+            "name": "Switch",
+            "includePath":
+            [
+                "${workspaceFolder}",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/src/Utils"
+            ],
+            "defines":
+            [
+                "__SWITCH__"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

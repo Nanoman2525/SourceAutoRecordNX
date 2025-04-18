@@ -32,7 +32,8 @@ CFLAGS	:=	-g -Wall -O2 -ffunction-sections \
 
 CFLAGS	+=	$(INCLUDE) -D__SWITCH__ -DNOLOG
 
-CXXFLAGS	:= $(CFLAGS) -I$(SDIR) -I$(SDIR)/Utils -fno-rtti -fno-exceptions
+CXXFLAGS := $(CFLAGS) -I$(SDIR) -I$(TOPDIR)/$(SDIR) $(foreach dir,$(SOURCES),-I$(CURDIR)/$(dir)) -fno-rtti -fno-exceptions
+CXXFLAGS += -include $(TOPDIR)/switch/standard_includes.hpp # Create a standard_includes.hpp file with all common includes
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=$(TOPDIR)/switch/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map) -Wl,--version-script=$(TOPDIR)/switch/exported.txt -Wl,-init=__custom_init -Wl,-fini=__custom_fini -Wl,--export-dynamic -nodefaultlibs

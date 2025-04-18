@@ -1,9 +1,5 @@
 #pragma once
 
-#ifdef __SWITCH__
-#include <cstdlib>
-#endif
-
 template <class T, class I = int>
 struct CUtlMemory {
 	T *m_pMemory;

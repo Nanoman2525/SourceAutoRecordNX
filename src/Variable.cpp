@@ -133,6 +133,9 @@ void Variable::EnableChange() {
 		this->ptr->m_fnChangeCallback.m_Size = this->originalSize;
 	}
 }
+void Variable::UniqueFor(int version) {
+	this->version = version;
+}
 void Variable::Register() {
 	if (!original_ConVarvtable) {
 		original_ConVarvtable = *(uintptr_t ***)this->ptr; // Record it once

@@ -3,9 +3,6 @@
 #include "Modules/Tier1.hpp"
 #endif
 #include "Utils/SDK.hpp"
-#ifdef __SWITCH__
-#include <vector>
-#endif
 
 #define DECL_CVAR_CALLBACK(name) void name##_callback(void *var, const char *pOldValue, float flOldValue)
 #define CVAR_HOOK_AND_CALLBACK(name) \
